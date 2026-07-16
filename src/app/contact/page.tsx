@@ -24,9 +24,9 @@ export default function ContactPage() {
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 40 4488 5000",
+      value: "+91 40 6750 5050",
       description: "Call to schedule an appointment or inquiry",
-      href: "tel:+914044885000",
+      href: "tel:+914067505050",
     },
     {
       icon: Mail,

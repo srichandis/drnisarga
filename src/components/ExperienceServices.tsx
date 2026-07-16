@@ -25,7 +25,7 @@ import { AnimatedSection, StaggerContainer, AnimatedItem, ScaleIn } from "@/comp
 
 export default function ExperienceServices() {
   const experiences = [
-    { icon: Calendar, text: "7+ Years of Dedicated Cardiac Surgical Experience" },
+    { icon: Calendar, text: "17+ Years of Dedicated Cardiac Surgical Experience" },
     { icon: Users, text: "6,000+ Adult & Paediatric Cardiac Surgeries" },
     { icon: Award, text: "Chief, Robotic Heart Surgery & MICS programme in KIMS hospitals" },
     { icon: Activity, text: "99% Off-Pump CABG in suitable patients" },
