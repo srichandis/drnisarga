@@ -45,10 +45,9 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link
-              href="#book"
+              href="/contact" 
               className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-blue-800 hover:shadow-md"
             >
-              <Calendar className="h-4 w-4" />
               Book an Appointment
             </Link>
           </div>
