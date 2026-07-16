@@ -46,7 +46,7 @@ export default function Hero() {
                   Book an Appointment
                 </Link>
                 <Link
-                  href="#about"
+                  href="/about"
                   className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:bg-blue-50/50 hover:-translate-y-0.5"
                 >
                   <User className="h-5 w-5" />

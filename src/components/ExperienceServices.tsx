@@ -108,7 +108,7 @@ export default function ExperienceServices() {
 
             <AnimatedSection className="mt-10 flex justify-center" delay={0.3}>
               <Link
-                href="#all-services"
+                href="/services"
                 className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-blue-800"
               >
                 Explore All Services

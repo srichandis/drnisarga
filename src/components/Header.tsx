@@ -17,28 +17,27 @@ export default function Header() {
             </div>
             <div>
               <span className="block text-xl font-bold text-[#0b3b80] leading-none">Dr. Nisarga</span>
-              <span className="text-xs text-gray-500 font-medium tracking-wide uppercase">Cardiac Surgeon</span>
+              <span className="text-xs text-gray-500 font-medium tracking-wide uppercase">Chief Cardiac Surgeon</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="#home" className="text-sm font-semibold text-[#0b3b80] hover:text-blue-700 transition-colors">
-              Home
-            </Link>
-            <Link href="#about" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
+            <Link href="/about"
+              className="text-sm font-semibold text-[#0b3b80] hover:text-blue-700 transition-colors"
+            >
               About
             </Link>
-            <Link href="#services" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
+            <Link href="/services" className="text-sm font-semibold text-[#0b3b80] hover:text-blue-700 transition-colors">
               Services
             </Link>
-            <Link href="#patients" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
-              For Patients
+            <Link href="/achievements" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
+              Achievements
             </Link>
-            <Link href="#resources" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
-              Patient Resources
+            <Link href="/media" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
+              Media
             </Link>
-            <Link href="#contact" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
+            <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
               Contact
             </Link>
           </nav>
@@ -67,42 +66,35 @@ export default function Header() {
         {isOpen && (
           <div className="border-t border-gray-100 bg-white px-6 py-4 md:hidden flex flex-col gap-4 animate-in slide-in-from-top duration-200">
             <Link
-              href="#home"
+              href="/about"
               onClick={() => setIsOpen(false)}
               className="text-base font-semibold text-[#0b3b80]"
-            >
-              Home
-            </Link>
-            <Link
-              href="#about"
-              onClick={() => setIsOpen(false)}
-              className="text-base font-medium text-gray-600"
             >
               About
             </Link>
             <Link
-              href="#services"
+              href="/services"
               onClick={() => setIsOpen(false)}
-              className="text-base font-medium text-gray-600"
+              className="text-base font-semibold text-[#0b3b80]"
             >
               Services
             </Link>
             <Link
-              href="#patients"
+              href="/achievements"
               onClick={() => setIsOpen(false)}
               className="text-base font-medium text-gray-600"
             >
-              For Patients
+              Achievements
             </Link>
             <Link
-              href="#resources"
+              href="/media"
               onClick={() => setIsOpen(false)}
               className="text-base font-medium text-gray-600"
             >
-              Patient Resources
+              Media
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               onClick={() => setIsOpen(false)}
               className="text-base font-medium text-gray-600"
             >
