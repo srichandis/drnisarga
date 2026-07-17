@@ -15,7 +15,7 @@ export default function About() {
             {/* Main Portrait */}
             <div className="relative w-full max-w-[420px] aspect-square overflow-hidden rounded-3xl border border-gray-100 shadow-xl z-10">
               <Image
-                src="https://res.cloudinary.com/duhxyuebe/image/upload/v1784185797/IMG_5774_rnuw3v.jpg"
+                src="/At-Work/IMG_5774.JPG"
                 alt="Dr. Nisarga - Senior Robotic Cardiac Surgeon"
                 fill
                 priority
@@ -27,7 +27,7 @@ export default function About() {
             {/* Top-left decorative image - overlapping on desktop, stacked on mobile */}
             <div className="relative md:absolute md:-top-4 md:-left-4 mt-4 md:mt-0 w-full max-w-[200px] md:w-36 lg:w-44 md:h-36 lg:h-44 aspect-square overflow-hidden rounded-2xl border border-gray-100 md:border-4 md:border-white shadow-lg md:z-20 md:-rotate-6 hover:rotate-0 transition-all duration-500 group">
               <Image
-                src="https://res.cloudinary.com/duhxyuebe/image/upload/v1784185797/IMG_5772_qv4ozy.jpg"
+                src="/At-Work/IMG_5772.JPG"
                 alt="Dr. Nisarga - Cardiac surgery expertise"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -39,11 +39,23 @@ export default function About() {
             {/* Bottom-right decorative image - overlapping on desktop, stacked on mobile */}
             <div className="relative md:absolute md:-bottom-4 md:-right-4 mt-4 md:mt-0 w-full max-w-[200px] md:w-44 lg:w-52 md:h-44 lg:h-52 aspect-square overflow-hidden rounded-2xl border border-gray-100 md:border-4 md:border-white shadow-lg md:z-20 md:rotate-6 hover:rotate-0 transition-all duration-500 group">
               <Image
-                src="https://res.cloudinary.com/duhxyuebe/image/upload/v1784184589/IMG_5758_jucdwm.jpg"
+                src="/At-Work/IMG_5758.JPG"
                 alt="Dr. Nisarga - Surgical expertise"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 768px) 200px, 208px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+
+            {/* New photo - at work moment, positioned on left to balance collage */}
+            <div className="relative md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-16 mt-4 md:mt-0 w-full max-w-[180px] md:w-32 lg:w-40 md:h-32 lg:h-40 aspect-square overflow-hidden rounded-2xl border border-gray-100 md:border-4 md:border-white shadow-lg md:z-20 md:-rotate-12 hover:rotate-0 transition-all duration-500 group">
+              <Image
+                src="/At-Work/PHOTO-2026-07-17-11-49-36.jpg"
+                alt="Dr. Nisarga - At work"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 768px) 180px, 160px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>

@@ -34,7 +34,7 @@ export default function Footer() {
                 <Link href="#home" className="hover:text-white transition-colors">Home</Link>
                 <Link href="#about" className="hover:text-white transition-colors">About</Link>
                 <Link href="#services" className="hover:text-white transition-colors">Services</Link>
-                <Link href="#patients" className="hover:text-white transition-colors">Why Trust Us</Link>
+                <Link href="/patient-first" className="hover:text-white transition-colors">Patient First</Link>
                 <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
               </div>
             </div>
@@ -62,13 +62,8 @@ export default function Footer() {
 
           </div>
 
-          {/* Copyright */}
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-300/80">
+          {/* Copyright */}            <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-300/80">
             <p>© {new Date().getFullYear()} Dr. Nisarga. All rights reserved.</p>
-            <div className="flex gap-4">
-              <Link href="#privacy" className="hover:text-white">Privacy Policy</Link>
-              <Link href="#terms" className="hover:text-white">Terms of Service</Link>
-            </div>
           </div>
         </div>
       </footer>

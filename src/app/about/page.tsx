@@ -336,6 +336,51 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* ==================== AT WORK GALLERY ==================== */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <AnimatedSection className="text-center max-w-3xl mx-auto" direction="up">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
+                  <Award className="h-6 w-6" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">At Work</h2>
+              </div>
+              <p className="text-gray-600 text-base md:text-lg">
+                A glimpse into Dr. Nisarga&apos;s professional life — from the operating room to
+                patient consultations and academic engagements.
+              </p>
+            </AnimatedSection>
+
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {[
+                { src: "/At-Work/IMG_5774.JPG", alt: "Dr. Nisarga in the operating room", caption: "Leading complex cardiac surgical procedures with precision and expertise." },
+                { src: "/At-Work/IMG_5772.JPG", alt: "Dr. Nisarga reviewing patient case", caption: "Meticulous pre-operative planning and patient evaluation." },
+                { src: "/At-Work/IMG_5758.JPG", alt: "Dr. Nisarga during surgery", caption: "Performing robotic and minimally invasive cardiac surgery at KIMS Hospitals." },
+                { src: "/At-Work/PHOTO-2026-07-17-11-49-36.jpg", alt: "Dr. Nisarga consulting", caption: "Engaging with colleagues and advancing cardiac surgical practices." },
+              ].map((img, idx) => (
+                <ScaleIn key={idx} delay={idx * 0.08}>
+                  <div className="group bg-[#f4f8fd] rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-50">
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm text-gray-600 leading-relaxed">{img.caption}</p>
+                    </div>
+                  </div>
+                </ScaleIn>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ==================== EDUCATION & MEMBERSHIPS ==================== */}
         <section className="py-16 md:py-24 bg-[#f4f8fd] border-y border-gray-100">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -505,7 +550,7 @@ export default function AboutPage() {
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
-                  href="/#book"
+                  href="/contact"
                   className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
                 >
                   Book an Appointment

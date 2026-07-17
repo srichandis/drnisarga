@@ -158,7 +158,7 @@ export default function ContactPage() {
               {/* Right: Contact Form & Hospitals */}
               <AnimatedSection className="lg:col-span-7" direction="right" delay={0.15}>
                 {/* Contact Form */}
-                <div className="bg-[#f4f8fd] rounded-2xl border border-gray-100 p-6 md:p-8">
+                <div id="book-form" className="bg-[#f4f8fd] rounded-2xl border border-gray-100 p-6 md:p-8">
                   <h3 className="text-xl font-bold text-[#0b3b80] mb-2">Send a Message</h3>
                   <p className="text-sm text-gray-500 mb-6">
                     Fill out the form below and we will get back to you as soon as possible.
@@ -297,7 +297,7 @@ export default function ContactPage() {
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
-                  href="/#book"
+                  href="/contact#book-form"
                   className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
                 >
                   <Calendar className="h-5 w-5" />

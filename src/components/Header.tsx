@@ -34,6 +34,9 @@ export default function Header() {
             <Link href="/achievements" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
               Achievements
             </Link>
+            <Link href="/patient-first" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
+              Patient First
+            </Link>
             <Link href="/media" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
               Media
             </Link>
@@ -86,6 +89,13 @@ export default function Header() {
               Achievements
             </Link>
             <Link
+              href="/patient-first"
+              onClick={() => setIsOpen(false)}
+              className="text-base font-medium text-gray-600"
+            >
+              Patient First
+            </Link>
+            <Link
               href="/media"
               onClick={() => setIsOpen(false)}
               className="text-base font-medium text-gray-600"
@@ -100,7 +110,7 @@ export default function Header() {
               Contact
             </Link>
             <Link
-              href="#book"
+              href="/contact"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 rounded-lg bg-[#0b3b80] py-3 text-sm font-semibold text-white"
             >

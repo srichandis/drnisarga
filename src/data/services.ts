@@ -29,6 +29,7 @@ export interface ServiceContent {
   recovery: string[];
   whyRoboticMics?: string;
   stats?: { stat: string; label: string }[];
+  resultsGallery?: { src: string; alt: string; caption: string }[];
 }
 
 export const services: ServiceContent[] = [
@@ -109,6 +110,13 @@ export const services: ServiceContent[] = [
       { stat: "1–2 weeks", label: "Return to Light Activity" },
       { stat: "<1%", label: "Conversion to Sternotomy" },
       { stat: "99%+", label: "Technical Success Rate" },
+    ],
+    resultsGallery: [
+      { src: "/MICS-and-robotic-surgery-scars/IMG_5453.jpg", alt: "Robotic cardiac surgery incisions - small keyhole incisions", caption: "Robotic cardiac surgery incisions — tiny keyhole openings between the ribs" },
+      { src: "/MICS-and-robotic-surgery-scars/IMG_5456.jpg", alt: "Robotic surgery scar healing result", caption: "Robotic surgery scars during healing — minimal scarring visible" },
+      { src: "/MICS-and-robotic-surgery-scars/IMG_5457.jpg", alt: "Healed robotic heart surgery incisions", caption: "Fully healed robotic cardiac surgery incisions — barely visible scars" },
+      { src: "/MICS-and-robotic-surgery-scars/IMG_5460.jpg", alt: "MICS incision result after cardiac surgery", caption: "MICS incision result — small 4-6cm incision without sternotomy" },
+      { src: "/MICS-and-robotic-surgery-scars/IMG_5469.jpg", alt: "Minimally invasive cardiac surgery scar outcome", caption: "Minimally invasive cardiac surgery scar — excellent cosmetic outcome" },
     ]
   },
   {
@@ -188,6 +196,13 @@ export const services: ServiceContent[] = [
       { stat: "4–6 cm", label: "Incision Length" },
       { stat: "3–4 weeks", label: "Return to Work" },
       { stat: "4–8 weeks", label: "Full Recovery" },
+    ],
+    resultsGallery: [
+      { src: "/MICS-and-robotic-surgery-scars/IMG_5460.jpg", alt: "MICS incision result after cardiac surgery", caption: "MICS incision — a small 4-6cm incision between the ribs, avoiding sternotomy" },
+      { src: "/MICS-and-robotic-surgery-scars/IMG_5469.jpg", alt: "Minimally invasive cardiac surgery scar outcome", caption: "Healed MICS scar — excellent cosmetic outcome with minimal scarring" },
+      { src: "/MICS-and-robotic-surgery-scars/IMG_5453.jpg", alt: "Robotic cardiac surgery incisions - small keyhole incisions", caption: "MICS port-access incisions — small openings for surgical instruments" },
+      { src: "/MICS-and-robotic-surgery-scars/IMG_5456.jpg", alt: "Robotic surgery scar healing result", caption: "MICS scars during the healing process — quick recovery visible" },
+      { src: "/MICS-and-robotic-surgery-scars/IMG_5457.jpg", alt: "Healed robotic heart surgery incisions", caption: "Fully healed MICS incisions — barely visible over time" },
     ]
   },
   {

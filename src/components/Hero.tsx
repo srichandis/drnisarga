@@ -39,7 +39,7 @@ export default function Hero() {
             <AnimatedItem>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
-                  href="#book"
+                  href="/contact"
                   className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
                 >
                   <Calendar className="h-5 w-5" />

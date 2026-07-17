@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -188,6 +189,28 @@ export default function AchievementsPage() {
                 );
               })}
             </div>
+
+            {/* Awards Image */}
+            <ScaleIn delay={0.3}>
+              <div className="mt-8 max-w-md mx-auto">
+                <div className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-50">
+                    <Image
+                      src="/Achievements/IMG_5760.JPG"
+                      alt="Dr. Nisarga receiving recognition for surgical excellence"
+                      fill
+                      className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 400px"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <p className="text-xs text-gray-500 font-medium">
+                      Dr. Nisarga recognised for outstanding contributions to cardiac surgery
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ScaleIn>
           </div>
         </section>
 
@@ -222,6 +245,28 @@ export default function AchievementsPage() {
                 );
               })}
             </div>
+
+            {/* Media Image */}
+            <ScaleIn delay={0.3}>
+              <div className="mt-8 max-w-md mx-auto">
+                <div className="group bg-[#f4f8fd] rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-50">
+                    <Image
+                      src="/Achievements/IMG_2208.JPG"
+                      alt="Dr. Nisarga featured in media coverage"
+                      fill
+                      className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 400px"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <p className="text-xs text-gray-500 font-medium">
+                      Dr. Nisarga featured in national and regional media for pioneering cardiac surgical innovations
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ScaleIn>
           </div>
         </section>
 
@@ -385,7 +430,7 @@ export default function AchievementsPage() {
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
-                  href="/#book"
+                  href="/contact"
                   className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
                 >
                   Book a Consultation

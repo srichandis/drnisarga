@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle, Stethoscope, Heart, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
@@ -290,6 +291,43 @@ export default function ServicePageLayout({ service, relatedServices = [] }: Ser
           </div>
         </section>
 
+        {/* ==================== RESULTS GALLERY ==================== */}
+        {service.resultsGallery && service.resultsGallery.length > 0 && (
+          <section className="py-16 md:py-20 bg-white">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <AnimatedSection className="text-center max-w-3xl mx-auto" direction="up">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">Surgical Results & Scarring</h2>
+                <p className="mt-3 text-gray-600">
+                  See the remarkable cosmetic outcomes of {service.shortName} — minimal scarring with excellent healing
+                </p>
+              </AnimatedSection>
+
+              <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                {service.resultsGallery.map((img, idx) => (
+                  <ScaleIn key={idx} delay={(idx % 5) * 0.06}>
+                    <div className="group bg-[#f4f8fd] rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                      <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-50">
+                        <Image
+                          src={img.src}
+                          alt={img.alt}
+                          fill
+                          className="object-contain p-1.5 transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                        />
+                      </div>
+                      <div className="p-3">
+                        <p className="text-xs text-gray-600 leading-snug text-center font-medium">
+                          {img.caption}
+                        </p>
+                      </div>
+                    </div>
+                  </ScaleIn>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ==================== RECOVERY ==================== */}
         <section className="py-16 md:py-20 bg-[#f4f8fd] border-y border-gray-100">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -380,7 +418,7 @@ export default function ServicePageLayout({ service, relatedServices = [] }: Ser
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
-                  href="/#book"
+                  href="/contact"
                   className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
                 >
                   Book an Appointment
