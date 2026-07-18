@@ -10,10 +10,9 @@ export default function About() {
     <section id="about" className="py-16 md:py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
-          {/* Left Column: Images */}
-          <AnimatedSection className="lg:col-span-5 flex flex-col items-center relative" direction="left">
-            {/* Main Portrait */}
-            <div className="relative w-full max-w-[420px] aspect-square overflow-hidden rounded-3xl border border-gray-100 shadow-xl z-10">
+          {/* Left Column: Main Portrait */}
+          <AnimatedSection className="lg:col-span-5 flex justify-center" direction="left">
+            <div className="relative w-full max-w-[420px] aspect-square overflow-hidden rounded-3xl border border-gray-100 shadow-xl">
               <Image
                 src="/At-Work/IMG_5774.JPG"
                 alt="Dr. Nisarga - Senior Robotic Cardiac Surgeon"
@@ -22,42 +21,6 @@ export default function About() {
                 className="object-cover hover:scale-105 transition-transform duration-500"
                 sizes="(max-w-768px) 100vw, 420px"
               />
-            </div>
-
-            {/* Top-left decorative image - overlapping on desktop, stacked on mobile */}
-            <div className="relative md:absolute md:-top-4 md:-left-4 mt-4 md:mt-0 w-full max-w-[200px] md:w-36 lg:w-44 md:h-36 lg:h-44 aspect-square overflow-hidden rounded-2xl border border-gray-100 md:border-4 md:border-white shadow-lg md:z-20 md:-rotate-6 hover:rotate-0 transition-all duration-500 group">
-              <Image
-                src="/At-Work/IMG_5772.JPG"
-                alt="Dr. Nisarga - Cardiac surgery expertise"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                sizes="(max-width: 768px) 200px, 176px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-
-            {/* Bottom-right decorative image - overlapping on desktop, stacked on mobile */}
-            <div className="relative md:absolute md:-bottom-4 md:-right-4 mt-4 md:mt-0 w-full max-w-[200px] md:w-44 lg:w-52 md:h-44 lg:h-52 aspect-square overflow-hidden rounded-2xl border border-gray-100 md:border-4 md:border-white shadow-lg md:z-20 md:rotate-6 hover:rotate-0 transition-all duration-500 group">
-              <Image
-                src="/At-Work/IMG_5758.JPG"
-                alt="Dr. Nisarga - Surgical expertise"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                sizes="(max-width: 768px) 200px, 208px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-
-            {/* New photo - at work moment, positioned on left to balance collage */}
-            <div className="relative md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-16 mt-4 md:mt-0 w-full max-w-[180px] md:w-32 lg:w-40 md:h-32 lg:h-40 aspect-square overflow-hidden rounded-2xl border border-gray-100 md:border-4 md:border-white shadow-lg md:z-20 md:-rotate-12 hover:rotate-0 transition-all duration-500 group">
-              <Image
-                src="/At-Work/PHOTO-2026-07-17-11-49-36.jpg"
-                alt="Dr. Nisarga - At work"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                sizes="(max-width: 768px) 180px, 160px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </AnimatedSection>
 

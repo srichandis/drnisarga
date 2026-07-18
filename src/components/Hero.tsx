@@ -7,7 +7,7 @@ import { AnimatedSection, StaggerContainer, AnimatedItem } from "@/components/An
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/20 to-white py-12 md:py-24">
+    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-white via-[#0b3b80]/5 to-white py-12 md:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
           {/* Text Content */}
@@ -18,7 +18,7 @@ export default function Hero() {
               </h1>
             </AnimatedItem>
             <AnimatedItem>
-              <p className="mt-4 text-xl font-semibold text-gray-700 md:text-2xl">
+              <p className="mt-4 text-xl font-semibold text-[#0b3b80] md:text-2xl">
                 Senior Robotic & Minimally Invasive Cardiac Surgeon
               </p>
             </AnimatedItem>
@@ -31,7 +31,7 @@ export default function Hero() {
               </h2>
             </AnimatedItem>
             <AnimatedItem>
-              <p className="mt-4 max-w-xl text-lg leading-relaxed text-gray-600">
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-[#0b3b80]">
                 Delivering advanced cardiac care through robotic technology,
                 minimally invasive surgery, and evidence-based clinical practice.
               </p>
@@ -40,14 +40,14 @@ export default function Hero() {
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-[#0a3270] hover:-translate-y-0.5"
                 >
                   <Calendar className="h-5 w-5" />
                   Book an Appointment
                 </Link>
                 <Link
                   href="/about"
-                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:bg-blue-50/50 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:bg-[#0b3b80]/5 hover:-translate-y-0.5"
                 >
                   <User className="h-5 w-5" />
                   Meet Dr. Nisarga

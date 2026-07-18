@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import AtWorkGallery from "@/components/AtWorkGallery";
 import ExperienceServices from "@/components/ExperienceServices";
 import Trust from "@/components/Trust";
 import Footer from "@/components/Footer";
@@ -17,6 +18,9 @@ export default function Home() {
 
         {/* About Biography Section */}
         <About />
+
+        {/* At Work Photo Gallery */}
+        <AtWorkGallery />
 
         {/* Experience and Services Grid Section */}
         <ExperienceServices />

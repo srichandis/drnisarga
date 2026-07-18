@@ -1,11 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Calendar, Heart, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navLinks = [
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/achievements", label: "Achievements" },
+    { href: "/patient-first", label: "Patient First" },
+    { href: "/media", label: "Media" },
+    { href: "/contact", label: "Contact" },
+  ];
+
+  const isActive = (href: string) => pathname === href;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-md">
@@ -23,26 +36,19 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/about"
-              className="text-sm font-semibold text-[#0b3b80] hover:text-blue-700 transition-colors"
-            >
-              About
-            </Link>
-            <Link href="/services" className="text-sm font-semibold text-[#0b3b80] hover:text-blue-700 transition-colors">
-              Services
-            </Link>
-            <Link href="/achievements" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
-              Achievements
-            </Link>
-            <Link href="/patient-first" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
-              Patient First
-            </Link>
-            <Link href="/media" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
-              Media
-            </Link>
-            <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-[#0b3b80] transition-colors">
-              Contact
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm transition-colors ${
+                  isActive(link.href)
+                    ? "font-bold text-[#0b3b80]"
+                    : "font-semibold text-[#0b3b80] hover:text-blue-700"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
           {/* CTA Button */}
@@ -67,48 +73,20 @@ export default function Header() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="border-t border-gray-100 bg-white px-6 py-4 md:hidden flex flex-col gap-4 animate-in slide-in-from-top duration-200">
-            <Link
-              href="/about"
-              onClick={() => setIsOpen(false)}
-              className="text-base font-semibold text-[#0b3b80]"
-            >
-              About
-            </Link>
-            <Link
-              href="/services"
-              onClick={() => setIsOpen(false)}
-              className="text-base font-semibold text-[#0b3b80]"
-            >
-              Services
-            </Link>
-            <Link
-              href="/achievements"
-              onClick={() => setIsOpen(false)}
-              className="text-base font-medium text-gray-600"
-            >
-              Achievements
-            </Link>
-            <Link
-              href="/patient-first"
-              onClick={() => setIsOpen(false)}
-              className="text-base font-medium text-gray-600"
-            >
-              Patient First
-            </Link>
-            <Link
-              href="/media"
-              onClick={() => setIsOpen(false)}
-              className="text-base font-medium text-gray-600"
-            >
-              Media
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              className="text-base font-medium text-gray-600"
-            >
-              Contact
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`transition-colors ${
+                  isActive(link.href)
+                    ? "font-bold text-[#0b3b80]"
+                    : "font-semibold text-[#0b3b80]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
