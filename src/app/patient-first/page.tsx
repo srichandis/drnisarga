@@ -19,6 +19,7 @@ import {
   MessageCircle,
   CheckCircle,
   Smile,
+  Globe,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -96,15 +97,18 @@ const withPatients = [
     alt: "Dr. Nisarga with patient and family",
     caption: "Supporting both patients and their families through every stage of treatment.",
   },
+];
+
+const internationalPatients = [
   {
     src: "/With-Patients/IMG_2210.JPG",
-    alt: "Dr. Nisarga interacting with patient",
-    caption: "Building trust through transparent conversations and genuine care.",
+    alt: "International patient consultation with Dr. Nisarga",
+    caption: "Patients from around the world travel to KIMS Hospitals seeking Dr. Nisarga's expertise in advanced cardiac care.",
   },
   {
     src: "/With-Patients/IMG_2211.JPG",
-    alt: "Dr. Nisarga with patient post-surgery",
-    caption: "Celebrating successful outcomes and restored quality of life for every patient.",
+    alt: "International patient recovery after cardiac surgery",
+    caption: "International patients benefit from world-class cardiac surgery and compassionate post-operative care at KIMS Hospitals.",
   },
 ];
 
@@ -295,7 +299,7 @@ export default function PatientFirstPage() {
 
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {withPatients.map((item, idx) => (
-                <ScaleIn key={idx} delay={(idx % 6) * 0.06}>
+                <ScaleIn key={idx} delay={idx * 0.06}>
                   <div className="group bg-[#f4f8fd] rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-50">
                       <Image
@@ -320,6 +324,63 @@ export default function PatientFirstPage() {
                 </ScaleIn>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ==================== INTERNATIONAL PATIENTS ==================== */}
+        <section className="py-16 md:py-24 bg-[#f4f8fd] border-y border-gray-100">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <AnimatedSection className="text-center max-w-3xl mx-auto" direction="up">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
+                  <Globe className="h-6 w-6" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">International Patients</h2>
+              </div>
+              <p className="text-gray-600 text-base md:text-lg">
+                KIMS Hospitals in Hyderabad is a trusted destination for patients from across the globe
+                seeking advanced cardiac surgical care. Dr. Nisarga&apos;s expertise in robotic and minimally
+                invasive cardiac surgery attracts international patients who benefit from world-class
+                treatment combined with compassionate, patient-centred care.
+              </p>
+            </AnimatedSection>
+
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              {internationalPatients.map((item, idx) => (
+                <ScaleIn key={idx} delay={idx * 0.1}>
+                  <div className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-50">
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                    <div className="p-5">
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {item.caption}
+                      </p>
+                      <div className="mt-3 flex items-center gap-2">
+                        <Globe className="h-3.5 w-3.5 text-blue-500" />
+                        <span className="text-xs text-gray-400 font-medium">International Patient Care</span>
+                      </div>
+                    </div>
+                  </div>
+                </ScaleIn>
+              ))}
+            </div>
+
+            <AnimatedSection className="mt-10 text-center" delay={0.2}>
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-5 py-2.5 border border-blue-100">
+                <Globe className="h-4 w-4 text-[#0b3b80]" />
+                <span className="text-xs font-semibold text-[#0b3b80]">
+                  Global patients welcome — KIMS Hospitals provides comprehensive international patient services including visa assistance, travel coordination, and accommodation support.
+                </span>
+              </div>
+            </AnimatedSection>
           </div>
         </section>
 

@@ -352,11 +352,10 @@ export default function AboutPage() {
               </p>
             </AnimatedSection>
 
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
                 { src: "/At-Work/IMG_5774.JPG", alt: "Dr. Nisarga in the operating room", caption: "Leading complex cardiac surgical procedures with precision and expertise." },
                 { src: "/At-Work/IMG_5772.JPG", alt: "Dr. Nisarga reviewing patient case", caption: "Meticulous pre-operative planning and patient evaluation." },
-                { src: "/At-Work/IMG_5758.JPG", alt: "Dr. Nisarga during surgery", caption: "Performing robotic and minimally invasive cardiac surgery at KIMS Hospitals." },
                 { src: "/At-Work/PHOTO-2026-07-17-11-49-36.jpg", alt: "Dr. Nisarga consulting", caption: "Engaging with colleagues and advancing cardiac surgical practices." },
               ].map((img, idx) => (
                 <ScaleIn key={idx} delay={idx * 0.08}>
