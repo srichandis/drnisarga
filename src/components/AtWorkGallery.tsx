@@ -6,9 +6,9 @@ import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { AnimatedSection, StaggerContainer, AnimatedItem, ScaleIn } from "@/components/AnimatedSection";
 
 const galleryImages = [
-  { src: "/At-Work/IMG_5961.JPG", alt: "Dr. Nisarga — leading a cardiac surgery procedure" },
+  { src: "/At-Work/IMG_5758.JPG", alt: "Dr. Nisarga — leading a cardiac surgery procedure" },
   { src: "/At-Work/07136ef2-4425-4b6f-ad05-feecf0483717.JPG", alt: "Dr. Nisarga — surgical team in action" },
-  { src: "/At-Work/IMG_5758.JPG", alt: "Dr. Nisarga — performing robotic and minimally invasive cardiac surgery" },
+  { src: "/At-Work/IMG_5961.JPG", alt: "Dr. Nisarga — performing robotic and minimally invasive cardiac surgery" },
   { src: "/At-Work/9dcdd718-53c4-42b6-a145-3a5d7c0d6f03.JPG", alt: "Dr. Nisarga — performing a minimally invasive procedure" },
   { src: "/At-Work/a2d973d8-c862-4a01-b131-56644a74300d.JPG", alt: "Dr. Nisarga — at the robotic surgery console" },
   { src: "/At-Work/IMG_5965.jpg", alt: "Dr. Nisarga — cardiac care team collaboration" },

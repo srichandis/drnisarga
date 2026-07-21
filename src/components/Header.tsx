@@ -32,12 +32,12 @@ export default function Header() {
             </div>
             <div>
               <span className="block text-xl font-bold text-[#0b3b80] leading-none">Dr. Nisarga</span>
-              <span className="text-xs text-gray-500 font-medium tracking-wide uppercase">Chief Cardiac Surgeon</span>
+              <span className="text-xs text-gray-500 font-medium tracking-wide uppercase hidden lg:block">Chief Cardiac Surgeon</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
