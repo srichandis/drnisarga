@@ -19,7 +19,13 @@ import {
   TreePine,
   GraduationCap,
   ArrowLeft,
+  ArrowRight,
   Quote,
+  Building2,
+  Phone,
+  MapPin,
+  Stethoscope,
+  Ambulance,
 } from "lucide-react";
 import { useEffect } from "react";
 import Header from "@/components/Header";
@@ -207,6 +213,129 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* ==================== KIMS HOSPITALS ==================== */}
+        <section className="bg-white">
+          {/* Main Banner Section */}
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 md:py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+              {/* Left: Text Content */}
+              <StaggerContainer className="flex flex-col items-start" staggerDelay={0.08}>
+                <AnimatedItem>
+                  <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-[#c0392b] mb-4">
+                    Our Hospital
+                  </span>
+                </AnimatedItem>
+
+                <AnimatedItem>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0b3b80] leading-tight">
+                    KIMS Hospitals, Kondapur
+                    <span className="block text-lg md:text-xl font-medium text-[#c0392b] mt-2">
+                      Advanced Care. Compassionate Healing.
+                    </span>
+                  </h2>
+                </AnimatedItem>
+
+                <AnimatedItem>
+                  <p className="mt-6 text-base md:text-lg leading-relaxed text-gray-600">
+                    Under the leadership of <strong className="text-[#0b3b80]">Dr. Nisarga</strong>, KIMS Hospitals,
+                    Kondapur stands as a state-of-the-art multi-specialty tertiary care center with
+                    advanced cardiac infrastructure, offering comprehensive care across all major
+                    medical and surgical specialties.
+                  </p>
+                </AnimatedItem>
+
+                {/* 4 Feature Icons */}
+                <AnimatedItem>
+                  <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5">
+                    {[
+                      { icon: Building2, label: "State-of-the-art Infrastructure" },
+                      { icon: Cpu, label: "Robotic & Minimally Invasive Surgery" },
+                      { icon: HeartPulse, label: "Advanced Cardiac Care Units" },
+                      { icon: Users, label: "Expert Multidisciplinary Team" },
+                    ].map((feature, idx) => {
+                      const IconComponent = feature.icon;
+                      return (
+                        <div key={idx} className="flex items-start gap-3">
+                          <div className="mt-0.5 shrink-0 rounded-lg bg-[#0b3b80]/10 p-2 text-[#0b3b80]">
+                            <IconComponent className="h-4 w-4" />
+                          </div>
+                          <span className="text-sm font-medium text-gray-700 leading-snug">{feature.label}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </AnimatedItem>
+              </StaggerContainer>
+
+              {/* Right: Hospital Building Image */}
+              <AnimatedSection direction="right">
+                <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-xl border border-gray-100">
+                  <Image
+                    src="/Kims/kims.png"
+                    alt="KIMS Hospitals, Kondapur - Modern healthcare facility"
+                    fill
+                    className="object-cover object-[75%_center]"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5 pointer-events-none" />
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+
+          {/* World-Class Facilities Bar */}
+          <div className="bg-[#f4f8fd] border-y border-gray-100">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10 md:py-12">
+              <AnimatedSection direction="up" className="text-center mb-8">
+                <h3 className="text-lg md:text-xl font-bold text-[#0b3b80]">World-Class Facilities</h3>
+                <div className="mt-2 h-0.5 w-12 bg-[#c0392b] rounded mx-auto" />
+              </AnimatedSection>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {[
+                  { icon: Cpu, label: "Robotic Surgery" },
+                  { icon: Stethoscope, label: "Hybrid Operating Theatres" },
+                  { icon: Activity, label: "Advanced Cardiac ICU" },
+                  { icon: Heart, label: "Comprehensive Cardiac Services" },
+                  { icon: Users, label: "Multidisciplinary Approach" },
+                  { icon: Ambulance, label: "24x7 Emergency Support" },
+                ].map((facility, idx) => {
+                  const IconComponent = facility.icon;
+                  return (
+                    <ScaleIn key={idx} delay={idx * 0.05}>
+                      <div className="flex flex-col items-center text-center bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                        <div className="rounded-full bg-[#0b3b80]/10 p-2.5 text-[#0b3b80] mb-3">
+                          <IconComponent className="h-5 w-5" />
+                        </div>
+                        <span className="text-xs md:text-sm font-semibold text-gray-700 leading-snug">
+                          {facility.label}
+                        </span>
+                      </div>
+                    </ScaleIn>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Bar */}
+          <div className="bg-[#0b3b80]">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 py-4">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/90">
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-blue-200" />
+                  <span>KIMS Hospitals, Kondapur, Hyderabad</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 text-blue-200" />
+                  <span>040 7111 1111</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ==================== STATS BANNER ==================== */}
         <section className="bg-[#f4f8fd] border-y border-gray-100">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12 md:py-16">
@@ -332,50 +461,6 @@ export default function AboutPage() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ==================== AT WORK GALLERY ==================== */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <AnimatedSection className="text-center max-w-3xl mx-auto" direction="up">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
-                  <Award className="h-6 w-6" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">At Work</h2>
-              </div>
-              <p className="text-gray-600 text-base md:text-lg">
-                A glimpse into Dr. Nisarga&apos;s professional life — from the operating room to
-                patient consultations and academic engagements.
-              </p>
-            </AnimatedSection>
-
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {[
-                { src: "/At-Work/IMG_5774.JPG", alt: "Dr. Nisarga in the operating room", caption: "Leading complex cardiac surgical procedures with precision and expertise." },
-                { src: "/At-Work/IMG_5772.JPG", alt: "Dr. Nisarga reviewing patient case", caption: "Meticulous pre-operative planning and patient evaluation." },
-                { src: "/At-Work/PHOTO-2026-07-17-11-49-36.jpg", alt: "Dr. Nisarga consulting", caption: "Engaging with colleagues and advancing cardiac surgical practices." },
-              ].map((img, idx) => (
-                <ScaleIn key={idx} delay={idx * 0.08}>
-                  <div className="group bg-[#f4f8fd] rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-50">
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    <div className="p-4">
-                      <p className="text-sm text-gray-600 leading-relaxed">{img.caption}</p>
-                    </div>
-                  </div>
-                </ScaleIn>
-              ))}
             </div>
           </div>
         </section>

@@ -205,7 +205,7 @@ export default function AchievementsPage() {
                   </div>
                   <div className="p-4 text-center">
                     <p className="text-xs text-gray-500 font-medium">
-                      Dr. Nisarga recognised for outstanding contributions to cardiac surgery
+                        Any reward by a patient is more than any award. 
                     </p>
                   </div>
                 </div>

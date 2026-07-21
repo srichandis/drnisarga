@@ -92,18 +92,10 @@ const englishMedia = [
   {
     src: "/English Media/IMG_5757.JPG",
     alt: "English news coverage - Charitable Initiative",
-    title: "Charitable Heart Surgery Initiative",
+    title: "Top 10 Best Cardiac urgeons in India",
     outlet: "The Hindu",
     description:
       "Feature on Dr. Nisarga&apos;s commitment to accessible healthcare, highlighting 300+ free heart surgeries for economically disadvantaged patients.",
-  },
-  {
-    src: "/English Media/IMG_5765.JPG",
-    alt: "English news coverage - Research",
-    title: "Clinical Research Publication",
-    outlet: "Journal of Cardiac Surgery",
-    description:
-      "Published research on outcomes of minimally invasive cardiac surgery, contributing to the global body of evidence in cardiac care.",
   },
   {
     src: "/English Media/IMG_5768.JPG",
@@ -112,14 +104,6 @@ const englishMedia = [
     outlet: "Healthcare Awards",
     description:
       "Dr. Nisarga recognised for outstanding contributions to cardiac surgery, particularly in robotic and minimally invasive techniques.",
-  },
-  {
-    src: "/English Media/IMG_5771.JPG",
-    alt: "English news coverage - Community Health",
-    title: "Community Heart Health Camp",
-    outlet: "Public Health Chronicle",
-    description:
-      "Coverage of community outreach programmes focused on cardiac awareness, preventive cardiology, and free health screenings.",
   },
 ];
 
@@ -273,7 +257,7 @@ const tabs = [
     label: "English Media",
     icon: FileText,
     description:
-      "National and regional English-language news coverage featuring Dr. Nisarga&apos;s contributions to cardiac surgery and patient care.",
+      "National and regional English-language news coverage featuring Dr. Nisarga's contributions to cardiac surgery and patient care.",
     stats: [
       { stat: "14+", label: "English Media Features", icon: Newspaper },
       { stat: "10+", label: "National Publications", icon: Globe },

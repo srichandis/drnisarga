@@ -12,6 +12,9 @@ const galleryImages = [
   { src: "/At-Work/9dcdd718-53c4-42b6-a145-3a5d7c0d6f03.JPG", alt: "Dr. Nisarga — performing a minimally invasive procedure" },
   { src: "/At-Work/a2d973d8-c862-4a01-b131-56644a74300d.JPG", alt: "Dr. Nisarga — at the robotic surgery console" },
   { src: "/At-Work/IMG_5965.jpg", alt: "Dr. Nisarga — cardiac care team collaboration" },
+  { src: "/At-Work/IMG_5774.JPG", alt: "Dr. Nisarga — leading complex cardiac surgical procedures with precision and expertise" },
+  { src: "/At-Work/IMG_5772.JPG", alt: "Dr. Nisarga — meticulous pre-operative planning and patient evaluation" },
+  { src: "/At-Work/PHOTO-2026-07-17-11-49-36.jpg", alt: "Dr. Nisarga — engaging with colleagues and advancing cardiac surgical practices" },
 ];
 
 function GalleryImageCard({

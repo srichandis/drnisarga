@@ -32,7 +32,7 @@ export default function Header() {
             </div>
             <div>
               <span className="block text-xl font-bold text-[#0b3b80] leading-none">Dr. Nisarga</span>
-              <span className="text-xs text-gray-500 font-medium tracking-wide uppercase hidden lg:block">Chief Cardiac Surgeon</span>
+              <span className="text-xs text-gray-500 font-medium tracking-wide uppercase hidden lg:block">Senior Cardiac Surgeon</span>
             </div>
           </Link>
 
