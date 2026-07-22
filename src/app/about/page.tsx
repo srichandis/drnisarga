@@ -483,7 +483,7 @@ export default function AboutPage() {
                         <h3 className="text-base md:text-lg font-bold text-[#0b3b80]">{edu.degree}</h3>
                         <p className="mt-1 text-sm text-gray-600">{edu.institution}</p>
                         {edu.note && (
-                          <p className="mt-2 inline-block text-xs font-semibold text-amber-700 bg-amber-50 rounded-full px-3 py-1">
+                          <p className="mt-2 inline-block text-xs font-semibold text-[#0b3b80] bg-blue-50 rounded-full px-3 py-1">
                             {edu.note}
                           </p>
                         )}

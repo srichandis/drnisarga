@@ -107,6 +107,11 @@ const internationalPatients = [
     alt: "International patient recovery after cardiac surgery",
     caption: "International patients benefit from world-class cardiac surgery and compassionate post-operative care at KIMS Hospitals.",
   },
+  {
+    src: "/With-Patients/international 1.jpeg",
+    alt: "International patient from Africa treated by Dr. Nisarga",
+    caption: "Came to hospital from airport in ambulance with severe problem. Discharged on 10th day and flew back to Africa on 15th day.",
+  },
 ];
 
 const stats = [

@@ -19,7 +19,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <span className="block text-xl font-bold text-white leading-none">Dr. Nisarga</span>
-                  <span className="text-xs text-blue-300 font-semibold tracking-wide uppercase">Chief Cardiac Surgeon</span>
+                  <span className="text-xs text-blue-300 font-semibold tracking-wide uppercase">Senior Cardiac Surgeon</span>
                 </div>
               </Link>
               <p className="text-sm text-blue-200/80 leading-relaxed max-w-xs">
