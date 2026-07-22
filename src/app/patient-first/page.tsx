@@ -9,14 +9,11 @@ import {
   HeartHandshake,
   ShieldCheck,
   Heart,
-  Star,
-  Quote,
   BadgeCheck,
   Users,
   Activity,
   Award,
   TrendingUp,
-  MessageCircle,
   CheckCircle,
   Smile,
   Globe,
@@ -128,17 +125,6 @@ const commitmentPrinciples = [
   "Ensuring quality healthcare remains accessible to everyone, regardless of economic status.",
 ];
 
-const patientQuotes = [
-  {
-    quote: "Dr. Nisarga and his team made me feel completely at ease before my heart surgery. They explained everything clearly and took wonderful care of me.",
-    name: "Patient, Cardiac Bypass Surgery",
-  },
-  {
-    quote: "I am grateful for the exceptional care I received. Dr. Nisarga's expertise and compassion made all the difference in my recovery journey.",
-    name: "Patient, Robotic Heart Surgery",
-  },
-];
-
 export default function PatientFirstPage() {
   useEffect(() => {
     document.title = "Patient First | Dr. Nisarga - Chief Cardiac Surgeon";
@@ -221,7 +207,7 @@ export default function PatientFirstPage() {
                       direction={isReversed ? "right" : "left"}
                     >
                       <div className="bg-[#f4f8fd] rounded-2xl border border-gray-100 p-8 md:p-10 text-center lg:text-left hover:shadow-lg transition-all duration-300">
-                        <div className="inline-flex rounded-full bg-blue-100 p-4 text-[#0b3b80] mb-6">
+                        <div                      className="inline-flex rounded-full bg-[#d32537]/10 p-4 text-[#d32537] mb-6">
                           <IconComponent className="h-10 w-10" />
                         </div>
                         <h3 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">{pillar.title}</h3>
@@ -241,7 +227,7 @@ export default function PatientFirstPage() {
                       {pillar.highlights.map((highlight, hIdx) => (
                         <AnimatedItem key={hIdx}>
                           <div className="flex items-start gap-4 bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
-                            <div className="mt-0.5 shrink-0 rounded-full bg-blue-50 p-1.5 text-[#0b3b80] group-hover:bg-[#0b3b80] group-hover:text-white transition-all duration-300">
+                            <div className="mt-0.5 shrink-0 rounded-full bg-[#d32537]/10 p-1.5 text-[#d32537] group-hover:bg-[#d32537] group-hover:text-white transition-all duration-300">
                               <CheckCircle className="h-4 w-4" />
                             </div>
                             <span className="text-sm md:text-base text-gray-700 leading-relaxed font-medium">
@@ -316,7 +302,7 @@ export default function PatientFirstPage() {
                         {item.caption}
                       </p>
                       <div className="mt-3 flex items-center gap-1">
-                        <Heart className="h-3.5 w-3.5 text-red-400 fill-red-300" />
+                        <Heart className="h-3.5 w-3.5 text-[#d32537]/70 fill-[#d32537]/30" />
                         <span className="text-xs text-gray-400 font-medium">Patient Care</span>
                       </div>
                     </div>
@@ -381,47 +367,6 @@ export default function PatientFirstPage() {
                 </span>
               </div>
             </AnimatedSection>
-          </div>
-        </section>
-
-        {/* ==================== PATIENT QUOTES ==================== */}
-        <section className="py-16 md:py-20 bg-[#f4f8fd] border-y border-gray-100">
-          <div className="mx-auto max-w-5xl px-6 lg:px-8">
-            <AnimatedSection className="text-center max-w-3xl mx-auto" direction="up">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
-                  <MessageCircle className="h-6 w-6" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">What Patients Say</h2>
-              </div>
-              <p className="text-gray-600 text-base md:text-lg">
-                The greatest reward is the trust and gratitude of those we care for
-              </p>
-            </AnimatedSection>
-
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {patientQuotes.map((item, idx) => (
-                <ScaleIn key={idx} delay={idx * 0.1}>
-                  <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 hover:shadow-lg transition-all duration-300">
-                    <Quote className="h-8 w-8 text-blue-200 mb-4" />
-                    <p className="text-base md:text-lg text-gray-700 leading-relaxed italic">
-                      &ldquo;{item.quote}&rdquo;
-                    </p>
-                    <div className="mt-5 flex items-center gap-2">
-                      <div className="flex gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                        ))}
-                      </div>
-                      <span className="text-xs text-gray-400 ml-1">5.0</span>
-                    </div>
-                    <p className="mt-3 text-sm font-semibold text-[#0b3b80]">
-                      — {item.name}
-                    </p>
-                  </div>
-                </ScaleIn>
-              ))}
-            </div>
           </div>
         </section>
 

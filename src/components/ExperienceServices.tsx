@@ -56,10 +56,10 @@ export default function ExperienceServices() {
           {/* Left Column: Experience */}
           <AnimatedSection className="lg:col-span-5 bg-[#eef4fb] p-8 md:p-12 lg:py-20 flex flex-col justify-start" direction="left">
             <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
+              <div className="rounded-lg bg-red-100 p-2 text-[#d32537]">
                 <Award className="h-6 w-6" />
               </div>
-              <h3 className="text-2xl font-bold text-[#0b3b80]">Experience at a Glance</h3>
+              <h3 className="text-2xl font-bold text-[#d32537]">Experience at a Glance</h3>
             </div>
 
             <StaggerContainer className="mt-10 space-y-6" staggerDelay={0.08}>
@@ -67,7 +67,7 @@ export default function ExperienceServices() {
                 const IconComponent = exp.icon;
                 return (
                   <AnimatedItem key={index} className="flex items-start gap-4">
-                    <div className="mt-1 rounded-md bg-white p-1.5 shadow-sm text-[#0b3b80]">
+                    <div className="mt-1 rounded-md bg-white p-1.5 shadow-sm text-[#d32537]">
                       <IconComponent className="h-4.5 w-4.5" />
                     </div>
                     <span className="text-base font-semibold text-gray-700 leading-tight">
@@ -109,7 +109,7 @@ export default function ExperienceServices() {
             <AnimatedSection className="mt-10 flex justify-center" delay={0.3}>
               <Link
                 href="/services"
-                className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-blue-800"
+                className="flex items-center gap-2 rounded-lg bg-[#d32537] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#b01e2e] hover:-translate-y-0.5"
               >
                 Explore All Services
                 <ArrowRight className="h-4 w-4" />

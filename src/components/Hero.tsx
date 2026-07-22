@@ -23,10 +23,10 @@ export default function Hero() {
               </p>
             </AnimatedItem>
             <AnimatedItem>
-              <div className="mt-6 h-1.5 w-16 bg-[#0b3b80] rounded" />
+              <div className="mt-6 h-1.5 w-16 bg-[#d32537] rounded" />
             </AnimatedItem>
             <AnimatedItem>
-              <h2 className="mt-8 text-2xl font-bold text-[#0b3b80] sm:text-3xl">
+              <h2 className="mt-8 text-2xl font-bold text-[#d32537] sm:text-3xl">
                 Compassion. Precision. Innovation.
               </h2>
             </AnimatedItem>
@@ -47,7 +47,7 @@ export default function Hero() {
                 </Link>
                 <Link
                   href="/about"
-                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:bg-[#0b3b80]/5 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:border-[#d32537] hover:text-[#d32537] hover:bg-[#d32537]/5 hover:-translate-y-0.5"
                 >
                   <User className="h-5 w-5" />
                   Meet Dr. Nisarga

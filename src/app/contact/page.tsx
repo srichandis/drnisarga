@@ -117,7 +117,7 @@ export default function ContactPage() {
                           rel={detail.href.startsWith("http") ? "noopener noreferrer" : undefined}
                           className="flex items-start gap-4 bg-[#f4f8fd] rounded-xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
                         >
-                          <div className="mt-0.5 shrink-0 rounded-lg bg-blue-100 p-2.5 text-[#0b3b80] group-hover:bg-[#0b3b80] group-hover:text-white transition-all duration-300">
+                          <div className="mt-0.5 shrink-0 rounded-lg bg-blue-100 p-2.5 text-[#0b3b80] group-hover:bg-[#d32537] group-hover:text-white transition-all duration-300">
                             <IconComponent className="h-5 w-5" />
                           </div>
                           <div>
@@ -248,7 +248,7 @@ export default function ContactPage() {
 
                       <button
                         type="submit"
-                        className="flex items-center justify-center gap-2 w-full rounded-lg bg-[#0b3b80] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-blue-800 hover:-translate-y-0.5"
+                        className="flex items-center justify-center gap-2 w-full rounded-lg bg-[#d32537] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#b01e2e] hover:-translate-y-0.5"
                       >
                         <Send className="h-4 w-4" />
                         Send Message
@@ -298,14 +298,14 @@ export default function ContactPage() {
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
                   href="/contact#book-form"
-                  className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg bg-[#d32537] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-[#b01e2e] hover:-translate-y-0.5"
                 >
                   <Calendar className="h-5 w-5" />
                   Book an Appointment
                 </Link>
                 <Link
                   href="/services"
-                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:bg-blue-50/50 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:border-[#d32537] hover:text-[#d32537] hover:-translate-y-0.5"
                 >
                   Explore Our Services
                 </Link>

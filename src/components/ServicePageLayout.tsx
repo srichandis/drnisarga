@@ -130,7 +130,7 @@ export default function ServicePageLayout({ service, relatedServices = [] }: Ser
                 {service.conditions.map((condition, idx) => (
                   <ScaleIn key={idx} delay={idx * 0.05}>
                     <div className="flex items-start gap-4 bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md transition-all duration-300">
-                      <div className="mt-0.5 shrink-0 rounded-full bg-blue-100 p-1.5 text-[#0b3b80]">
+                      <div className="mt-0.5 shrink-0 rounded-full bg-red-100 p-1.5 text-[#d32537]">
                         <CheckCircle className="h-4 w-4" />
                       </div>
                       <div>
@@ -167,7 +167,7 @@ export default function ServicePageLayout({ service, relatedServices = [] }: Ser
                     {service.symptoms.map((symptom, idx) => (
                       <ScaleIn key={idx} delay={idx * 0.04}>
                         <div className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:bg-blue-50/50 transition-colors duration-200">
-                          <div className="mt-0.5 shrink-0 rounded-full bg-amber-100 p-1 text-amber-600">
+                          <div className="mt-0.5 shrink-0 rounded-full bg-red-100 p-1 text-[#d32537]">
                             <Heart className="h-3.5 w-3.5" />
                           </div>
                           <span className="text-sm md:text-base text-gray-700">{symptom}</span>
@@ -397,7 +397,7 @@ export default function ServicePageLayout({ service, relatedServices = [] }: Ser
                   <ScaleIn key={related.slug} delay={idx * 0.05}>
                     <Link
                       href={`/services/${related.slug}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-white border border-gray-200 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-[#0b3b80] hover:text-white hover:border-[#0b3b80] transition-all duration-200"
+                      className="inline-flex items-center gap-2 rounded-full bg-white border border-gray-200 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-[#d32537] hover:text-white hover:border-[#d32537] transition-all duration-200"
                     >
                       {related.shortName || related.title}
                     </Link>
@@ -419,13 +419,13 @@ export default function ServicePageLayout({ service, relatedServices = [] }: Ser
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg bg-[#d32537] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-[#b01e2e] hover:-translate-y-0.5"
                 >
                   Book an Appointment
                 </Link>
                 <Link
                   href="/services"
-                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:bg-blue-50/50 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:border-[#d32537] hover:text-[#d32537] hover:-translate-y-0.5"
                 >
                   <ArrowLeft className="h-5 w-5" />
                   All Services

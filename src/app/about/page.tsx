@@ -83,7 +83,7 @@ const journeyHighlights = [
 
 const education = [
   { degree: "MCh – Cardiothoracic & Vascular Surgery", institution: "Sri Jayadeva Institute of Cardiology, Bengaluru", note: "First Rank in the All India Entrance Examination" },
-  { degree: "MS – General Surgery", institution: "Kasturba Medical College, Mangalore, Manipal Academy" },
+  { degree: "MS – General Surgery", institution: "Kasturba Medical College, Mangalore", note: "MAHE (Manipal Academy of Higher Education)" },
   { degree: "MBBS", institution: "Sri Siddhartha Medical College, Tumkur" },
 ];
 
@@ -173,10 +173,10 @@ export default function AboutPage() {
               <StaggerContainer className="lg:col-span-7 flex flex-col items-start" staggerDelay={0.1}>
                 <AnimatedItem>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
+                    <div className="rounded-lg bg-red-100 p-2 text-[#d32537]">
                       <Quote className="h-5 w-5" />
                     </div>
-                    <span className="text-sm font-bold tracking-wider text-[#0b3b80] uppercase">
+                    <span className="text-sm font-bold tracking-wider text-[#d32537] uppercase">
                       About Dr. Nisarga
                     </span>
                   </div>
@@ -221,7 +221,7 @@ export default function AboutPage() {
               {/* Left: Text Content */}
               <StaggerContainer className="flex flex-col items-start" staggerDelay={0.08}>
                 <AnimatedItem>
-                  <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-[#c0392b] mb-4">
+                  <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-[#d32537] mb-4">
                     Our Hospital
                   </span>
                 </AnimatedItem>
@@ -229,7 +229,7 @@ export default function AboutPage() {
                 <AnimatedItem>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0b3b80] leading-tight">
                     KIMS Hospitals, Kondapur
-                    <span className="block text-lg md:text-xl font-medium text-[#c0392b] mt-2">
+                    <span className="block text-lg md:text-xl font-medium text-[#d32537] mt-2">
                       Advanced Care. Compassionate Healing.
                     </span>
                   </h2>
@@ -256,7 +256,7 @@ export default function AboutPage() {
                       const IconComponent = feature.icon;
                       return (
                         <div key={idx} className="flex items-start gap-3">
-                          <div className="mt-0.5 shrink-0 rounded-lg bg-[#0b3b80]/10 p-2 text-[#0b3b80]">
+                          <div className="mt-0.5 shrink-0 rounded-lg bg-[#d32537]/10 p-2 text-[#d32537]">
                             <IconComponent className="h-4 w-4" />
                           </div>
                           <span className="text-sm font-medium text-gray-700 leading-snug">{feature.label}</span>
@@ -288,8 +288,7 @@ export default function AboutPage() {
           <div className="bg-[#f4f8fd] border-y border-gray-100">
             <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10 md:py-12">
               <AnimatedSection direction="up" className="text-center mb-8">
-                <h3 className="text-lg md:text-xl font-bold text-[#0b3b80]">World-Class Facilities</h3>
-                <div className="mt-2 h-0.5 w-12 bg-[#c0392b] rounded mx-auto" />
+                <h3 className="text-lg md:text-xl font-bold text-[#0b3b80]">World-Class Facilities</h3>                  <div className="mt-2 h-0.5 w-12 bg-[#d32537] rounded mx-auto" />
               </AnimatedSection>
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -305,7 +304,7 @@ export default function AboutPage() {
                   return (
                     <ScaleIn key={idx} delay={idx * 0.05}>
                       <div className="flex flex-col items-center text-center bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                        <div className="rounded-full bg-[#0b3b80]/10 p-2.5 text-[#0b3b80] mb-3">
+                        <div className="rounded-full bg-[#d32537]/10 p-2.5 text-[#d32537] mb-3">
                           <IconComponent className="h-5 w-5" />
                         </div>
                         <span className="text-xs md:text-sm font-semibold text-gray-700 leading-snug">
@@ -357,7 +356,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <AnimatedSection className="text-center max-w-3xl mx-auto" direction="up">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
+                <div className="rounded-lg bg-red-100 p-2 text-[#d32537]">
                   <Award className="h-6 w-6" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">Professional Journey</h2>
@@ -372,7 +371,7 @@ export default function AboutPage() {
               {journeyHighlights.map((highlight, index) => (
                 <ScaleIn key={index} delay={index * 0.04}>
                   <div className="flex items-start gap-3 p-4 rounded-xl hover:bg-blue-50/50 transition-colors duration-200">
-                    <div className="mt-0.5 shrink-0 rounded-full bg-blue-100 p-1 text-[#0b3b80]">
+                    <div className="mt-0.5 shrink-0 rounded-full bg-red-100 p-1 text-[#d32537]">
                       <CheckCircle className="h-4 w-4" />
                     </div>
                     <span className="text-sm md:text-base text-gray-700 leading-relaxed">{highlight}</span>
@@ -388,7 +387,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <AnimatedSection className="text-center max-w-3xl mx-auto" direction="up">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
+                <div className="rounded-lg bg-red-100 p-2 text-[#d32537]">
                   <Cpu className="h-6 w-6" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">Innovation with Purpose</h2>
@@ -405,7 +404,7 @@ export default function AboutPage() {
                 return (
                   <ScaleIn key={index} delay={index * 0.06}>
                     <div className="service-card flex flex-col items-center justify-center rounded-2xl border border-gray-100 p-6 text-center bg-white hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                      <div className="rounded-full bg-blue-50/80 p-3 text-[#0b3b80] mb-4">
+                      <div className="rounded-full bg-red-50/80 p-3 text-[#d32537] mb-4">
                         <IconComponent className="h-6 w-6" />
                       </div>
                       <span className="text-sm font-semibold text-[#0b3b80] leading-snug">
@@ -430,13 +429,12 @@ export default function AboutPage() {
         <section className="py-16 md:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              <AnimatedSection className="lg:col-span-5 lg:sticky lg:top-28" direction="left">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
-                    <BookOpen className="h-6 w-6" />
+              <AnimatedSection className="lg:col-span-5 lg:sticky lg:top-28" direction="left">                  <div className="flex items-center gap-3 mb-4">
+                    <div className="rounded-lg bg-red-100 p-2 text-[#d32537]">
+                      <BookOpen className="h-6 w-6" />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">Academic & Professional Contributions</h2>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">Academic & Professional Contributions</h2>
-                </div>
                 <p className="text-gray-600 text-base md:text-lg">
                   Dr. Nisarga is actively involved in advancing cardiac surgery through education, research,
                   and professional collaboration.
@@ -452,7 +450,7 @@ export default function AboutPage() {
                   {academicContributions.map((item, index) => (
                     <ScaleIn key={index} delay={index * 0.06}>
                       <div className="flex items-start gap-4 p-5 rounded-xl bg-[#f4f8fd] border border-gray-100 hover:shadow-md transition-all duration-300">
-                        <div className="mt-0.5 shrink-0 rounded-full bg-blue-100 p-1.5 text-[#0b3b80]">
+                        <div className="mt-0.5 shrink-0 rounded-full bg-red-100 p-1.5 text-[#d32537]">
                           <CheckCircle className="h-4 w-4" />
                         </div>
                         <span className="text-sm md:text-base text-gray-700 leading-relaxed">{item}</span>
@@ -472,7 +470,7 @@ export default function AboutPage() {
               {/* Education */}
               <AnimatedSection direction="left">
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
+                  <div className="rounded-lg bg-red-100 p-2 text-[#d32537]">
                     <GraduationCap className="h-6 w-6" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">Education</h2>
@@ -498,7 +496,7 @@ export default function AboutPage() {
               {/* Memberships */}
               <AnimatedSection direction="right">
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
+                  <div className="rounded-lg bg-red-100 p-2 text-[#d32537]">
                     <Users className="h-6 w-6" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">Professional Memberships</h2>
@@ -520,7 +518,7 @@ export default function AboutPage() {
                 {/* Community Service */}
                 <AnimatedSection className="mt-12" delay={0.2}>
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
+                    <div className="rounded-lg bg-red-100 p-2 text-[#d32537]">
                       <Heart className="h-6 w-6" />
                     </div>
                     <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">Community Service</h2>
@@ -550,7 +548,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <AnimatedSection className="text-center max-w-3xl mx-auto" direction="up">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="rounded-lg bg-blue-100 p-2 text-[#0b3b80]">
+                <div className="rounded-lg bg-red-100 p-2 text-[#d32537]">
                   <Feather className="h-6 w-6" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#0b3b80]">Beyond the Operating Room</h2>
@@ -567,7 +565,7 @@ export default function AboutPage() {
                 return (
                   <ScaleIn key={index} delay={index * 0.08}>
                     <div className="flex flex-col items-center text-center p-6 rounded-2xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                      <div className="rounded-full bg-blue-50/80 p-3 text-[#0b3b80] mb-4">
+                      <div className="rounded-full bg-red-50/80 p-3 text-[#d32537] mb-4">
                         <IconComponent className="h-6 w-6" />
                       </div>
                       <span className="text-sm font-semibold text-gray-700 leading-snug">{interest.label}</span>
@@ -589,9 +587,8 @@ export default function AboutPage() {
         {/* ==================== GUIDING PRINCIPLES ==================== */}
         <section className="py-16 md:py-24 bg-gradient-to-br from-[#0b3b80] to-[#1a5fc7]">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
-            <AnimatedSection className="text-center" direction="up">
-              <div className="inline-flex items-center gap-3 mb-4">
-                <div className="rounded-lg bg-blue-200/20 p-2 text-white">
+            <AnimatedSection className="text-center" direction="up">                    <div className="inline-flex items-center gap-3 mb-4">
+                <div className="rounded-lg bg-[#d32537]/20 p-2 text-[#d32537]">
                   <Heart className="h-6 w-6" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white">
@@ -607,8 +604,8 @@ export default function AboutPage() {
               {principles.map((principle, index) => (
                 <AnimatedItem key={index}>
                   <div className="flex items-start gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-5 md:p-6 hover:bg-white/15 transition-colors duration-200">
-                    <div className="mt-0.5 shrink-0 rounded-full bg-blue-200/20 p-1.5 text-white">
-                      <Heart className="h-5 w-5 fill-white/80" />
+                    <div className="mt-0.5 shrink-0 rounded-full bg-[#d32537]/20 p-1.5 text-[#d32537]">
+                      <Heart className="h-5 w-5 fill-[#d32537]/80" />
                     </div>
                     <p className="text-base md:text-lg text-white/95 leading-relaxed">{principle}</p>
                   </div>
@@ -635,13 +632,13 @@ export default function AboutPage() {
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg bg-[#d32537] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-[#b01e2e] hover:-translate-y-0.5"
                 >
                   Book an Appointment
                 </Link>
                 <Link
                   href="/"
-                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:bg-blue-50/50 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:border-[#d32537] hover:text-[#d32537] hover:-translate-y-0.5"
                 >
                   <ArrowLeft className="h-5 w-5" />
                   Back to Home

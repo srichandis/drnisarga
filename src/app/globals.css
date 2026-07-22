@@ -5,6 +5,9 @@
   --foreground: #1e293b;
   --primary-blue: #0b3b80;
   --accent-blue: #1e40af;
+  --accent-red: #d32537;
+  --accent-red-dark: #b01e2e;
+  --accent-red-light: #fef2f2;
   --light-blue-bg: #f4f8fd;
   --card-border: rgba(11, 59, 128, 0.08);
 }
@@ -12,6 +15,9 @@
 @theme inline {
   --color-primary: var(--primary-blue);
   --color-accent: var(--accent-blue);
+  --color-accent-secondary: var(--accent-red);
+  --color-accent-secondary-dark: var(--accent-red-dark);
+  --color-accent-secondary-light: var(--accent-red-light);
   --color-light-bg: var(--light-blue-bg);
   --color-card-border: var(--card-border);
 }

@@ -27,7 +27,7 @@ export default function About() {
           {/* Right Column: Bio */}
           <StaggerContainer className="lg:col-span-7 flex flex-col items-start" staggerDelay={0.1}>
             <AnimatedItem>
-              <span className="text-sm font-bold tracking-wider text-[#0b3b80] uppercase">
+              <span className="text-sm font-bold tracking-wider text-[#d32537] uppercase">
                 ABOUT DR. NISARGA
               </span>
             </AnimatedItem>
@@ -57,7 +57,7 @@ export default function About() {
             <AnimatedItem>
               <Link
                 href="/about"
-                className="mt-8 flex items-center gap-2 text-[#0b3b80] font-semibold hover:gap-3 transition-all group"
+                className="mt-8 flex items-center gap-2 text-[#d32537] font-semibold hover:text-[#b01e2e] hover:gap-3 transition-all group"
               >
                 Read Full Biography
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

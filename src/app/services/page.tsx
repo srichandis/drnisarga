@@ -74,7 +74,7 @@ export default function ServicesPage() {
                       href={`/services/${service.slug}`}
                       className="group block rounded-2xl border border-gray-100 bg-white p-6 md:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     >
-                      <div className="rounded-full bg-blue-50/80 p-3.5 text-[#0b3b80] w-fit mb-5 group-hover:bg-[#0b3b80] group-hover:text-white transition-all duration-300">
+                      <div className="rounded-full bg-blue-50/80 p-3.5 text-[#0b3b80] w-fit mb-5 group-hover:bg-[#d32537] group-hover:text-white transition-all duration-300">
                         <IconComponent className="h-7 w-7" />
                       </div>
 
@@ -86,7 +86,7 @@ export default function ServicesPage() {
                         {service.subtitle}
                       </p>
 
-                      <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#0b3b80] group-hover:gap-3 transition-all">
+                      <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#d32537] group-hover:gap-3 transition-all">
                         Learn More
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </div>
@@ -174,13 +174,13 @@ export default function ServicesPage() {
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg bg-[#d32537] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-[#b01e2e] hover:-translate-y-0.5"
                 >
                   Book a Consultation
                 </Link>
                 <Link
                   href="/about"
-                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:bg-blue-50/50 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:border-[#d32537] hover:text-[#d32537] hover:-translate-y-0.5"
                 >
                   About Dr. Nisarga
                 </Link>

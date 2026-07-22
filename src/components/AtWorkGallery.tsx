@@ -51,7 +51,7 @@ function GalleryImageCard({
           </div>
 
           {/* Subtle inset ring */}
-          <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5 group-hover:ring-[#0b3b80]/30 transition-all duration-300 pointer-events-none" />
+          <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5 group-hover:ring-[#d32537]/40 transition-all duration-300 pointer-events-none" />
         </div>
       </button>
     </ScaleIn>
@@ -126,7 +126,7 @@ export default function AtWorkGallery() {
               </p>
             </AnimatedItem>
             <AnimatedItem>
-              <div className="mt-6 h-1 w-16 bg-[#0b3b80] rounded mx-auto" />
+              <div className="mt-6 h-1 w-16 bg-[#d32537] rounded mx-auto" />
             </AnimatedItem>
           </StaggerContainer>
 
@@ -158,7 +158,7 @@ export default function AtWorkGallery() {
           {/* Close button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200"
+            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-[#d32537]/20 hover:bg-[#d32537]/40 text-white transition-all duration-200"
             aria-label="Close lightbox"
           >
             <X className="h-6 w-6" />
@@ -170,7 +170,7 @@ export default function AtWorkGallery() {
               e.stopPropagation();
               goPrev();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/10 hover:bg-[#d32537]/40 text-white transition-all duration-200"
             aria-label="Previous image"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -182,7 +182,7 @@ export default function AtWorkGallery() {
               e.stopPropagation();
               goNext();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/10 hover:bg-[#d32537]/40 text-white transition-all duration-200"
             aria-label="Next image"
           >
             <ChevronRight className="h-6 w-6" />

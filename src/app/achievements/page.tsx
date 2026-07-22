@@ -402,8 +402,8 @@ export default function AchievementsPage() {
                   {charitableInitiatives.map((initiative, idx) => (
                     <ScaleIn key={idx} delay={idx * 0.08}>
                       <div className="flex items-start gap-4 bg-[#f4f8fd] rounded-xl border border-gray-100 p-5 hover:shadow-md transition-all duration-300">
-                        <div className="mt-0.5 shrink-0 rounded-full bg-red-50 p-1.5 text-red-500">
-                          <Heart className="h-4 w-4 fill-red-200" />
+                        <div className="mt-0.5 shrink-0 rounded-full bg-[#d32537]/10 p-1.5 text-[#d32537]">
+                          <Heart className="h-4 w-4 fill-[#d32537]/30" />
                         </div>
                         <div>
                           <h4 className="font-bold text-[#0b3b80] text-sm md:text-base">{initiative.title}</h4>
@@ -431,13 +431,13 @@ export default function AchievementsPage() {
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-800 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg bg-[#d32537] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-[#b01e2e] hover:-translate-y-0.5"
                 >
                   Book a Consultation
                 </Link>
                 <Link
                   href="/about"
-                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:bg-blue-50/50 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 rounded-lg border-2 border-[#0b3b80] px-6 py-3.5 text-base font-semibold text-[#0b3b80] transition-all hover:border-[#d32537] hover:text-[#d32537] hover:-translate-y-0.5"
                 >
                   <ArrowLeft className="h-5 w-5" />
                   About Dr. Nisarga

@@ -27,8 +27,8 @@ export default function Header() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-[#0b3b80]">
-              <Heart className="h-6 w-6 fill-[#0b3b80]" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50 text-[#d32537]">
+              <Heart className="h-6 w-6 fill-[#d32537]" />
             </div>
             <div>
               <span className="block text-xl font-bold text-[#0b3b80] leading-none">Dr. Nisarga</span>
@@ -44,8 +44,8 @@ export default function Header() {
                 href={link.href}
                 className={`text-sm transition-colors ${
                   isActive(link.href)
-                    ? "font-bold text-[#0b3b80]"
-                    : "font-semibold text-[#0b3b80] hover:text-blue-700"
+                    ? "font-bold text-[#d32537]"
+                    : "font-semibold text-[#0b3b80] hover:text-[#d32537]"
                 }`}
               >
                 {link.label}
@@ -57,7 +57,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/contact" 
-              className="flex items-center gap-2 rounded-lg bg-[#0b3b80] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-blue-800 hover:shadow-md"
+              className="flex items-center gap-2 rounded-lg bg-[#d32537] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-[#b01e2e] hover:shadow-md hover:-translate-y-0.5"
             >
               Book an Appointment
             </Link>
@@ -82,7 +82,7 @@ export default function Header() {
                 onClick={() => setIsOpen(false)}
                 className={`transition-colors ${
                   isActive(link.href)
-                    ? "font-bold text-[#0b3b80]"
+                    ? "font-bold text-[#d32537]"
                     : "font-semibold text-[#0b3b80]"
                 }`}
               >
@@ -92,7 +92,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-lg bg-[#0b3b80] py-3 text-sm font-semibold text-white"
+              className="flex items-center justify-center gap-2 rounded-lg bg-[#d32537] py-3 text-sm font-semibold text-white hover:bg-[#b01e2e] transition-colors"
             >
               <Calendar className="h-4 w-4" />
               Book an Appointment

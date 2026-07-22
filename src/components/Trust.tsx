@@ -24,6 +24,7 @@ export default function Trust() {
               <h3 className="text-4xl font-extrabold tracking-tight text-[#0b3b80] sm:text-5xl">
                 Why Patients Trust<br />Dr. Nisarga.
               </h3>
+              <div className="mt-4 h-1 w-16 bg-[#d32537] rounded" />
             </AnimatedItem>
             <AnimatedItem>
               <p className="mt-8 text-lg md:text-xl leading-relaxed text-gray-700 font-medium">
@@ -62,7 +63,7 @@ export default function Trust() {
                 return (
                   <AnimatedItem key={index}>
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
-                      <div className="rounded-xl bg-white/10 p-3 text-blue-200">
+                      <div className="rounded-xl bg-[#d32537]/20 p-3 text-[#d32537]">
                         <IconComponent className="h-6 w-6" />
                       </div>
                       <div>
