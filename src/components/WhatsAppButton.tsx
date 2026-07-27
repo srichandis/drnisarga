@@ -1,6 +1,6 @@
 "use client";
 
-const WHATSAPP_NUMBER = "+919876543210"; // Replace with actual number
+const WHATSAPP_NUMBER = "+919912318923";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hello! I would like to know more about Dr. Nisarga's cardiac surgery services."
 );

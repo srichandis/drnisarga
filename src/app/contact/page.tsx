@@ -2,22 +2,57 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Phone, Mail, MapPin, Calendar, Clock, Heart, Send, CheckCircle, Hospital } from "lucide-react";
+import { ArrowLeft, Phone, Mail, MapPin, Calendar, Clock, Heart, Send, CheckCircle, Hospital, Loader2, AlertCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AnimatedSection, StaggerContainer, AnimatedItem, ScaleIn } from "@/components/AnimatedSection";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
 
   useEffect(() => {
     document.title = "Contact | Dr. Nisarga - Chief Cardiac Surgeon";
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const updateField = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setError(null);
+    setSending(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const contactDetails = [
@@ -164,6 +199,14 @@ export default function ContactPage() {
                     Fill out the form below and we will get back to you as soon as possible.
                   </p>
 
+                  {/* Error Message */}
+                  {error && (
+                    <div className="flex items-start gap-3 bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
+                      <AlertCircle className="h-5 w-5 text-red-500 shrink-0 mt-0.5" />
+                      <p className="text-sm text-red-700">{error}</p>
+                    </div>
+                  )}
+
                   {submitted ? (
                     <div className="flex flex-col items-center justify-center py-12 text-center">
                       <div className="rounded-full bg-green-100 p-3 text-green-600 mb-4">
@@ -173,6 +216,13 @@ export default function ContactPage() {
                       <p className="text-sm text-gray-500 mt-2">
                         Thank you for reaching out. We will respond to your inquiry shortly.
                       </p>
+                      <button
+                        type="button"
+                        onClick={() => setSubmitted(false)}
+                        className="mt-4 text-sm font-semibold text-[#0b3b80] hover:text-[#d32537] transition-colors"
+                      >
+                        Send another message
+                      </button>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-5">
@@ -185,6 +235,8 @@ export default function ContactPage() {
                             type="text"
                             id="name"
                             required
+                            value={formData.name}
+                            onChange={(e) => updateField("name", e.target.value)}
                             placeholder="Your full name"
                             className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:border-[#0b3b80] focus:outline-none focus:ring-2 focus:ring-[#0b3b80]/10 transition-colors"
                           />
@@ -197,6 +249,8 @@ export default function ContactPage() {
                             type="email"
                             id="email"
                             required
+                            value={formData.email}
+                            onChange={(e) => updateField("email", e.target.value)}
                             placeholder="your@email.com"
                             className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:border-[#0b3b80] focus:outline-none focus:ring-2 focus:ring-[#0b3b80]/10 transition-colors"
                           />
@@ -210,6 +264,8 @@ export default function ContactPage() {
                         <input
                           type="tel"
                           id="phone"
+                          value={formData.phone}
+                          onChange={(e) => updateField("phone", e.target.value)}
                           placeholder="+91 98765 43210"
                           className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:border-[#0b3b80] focus:outline-none focus:ring-2 focus:ring-[#0b3b80]/10 transition-colors"
                         />
@@ -222,6 +278,8 @@ export default function ContactPage() {
                         <select
                           id="subject"
                           required
+                          value={formData.subject}
+                          onChange={(e) => updateField("subject", e.target.value)}
                           className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-800 focus:border-[#0b3b80] focus:outline-none focus:ring-2 focus:ring-[#0b3b80]/10 transition-colors"
                         >
                           <option value="">Select a subject</option>
@@ -241,6 +299,8 @@ export default function ContactPage() {
                           id="message"
                           required
                           rows={5}
+                          value={formData.message}
+                          onChange={(e) => updateField("message", e.target.value)}
                           placeholder="Please describe your condition or inquiry..."
                           className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:border-[#0b3b80] focus:outline-none focus:ring-2 focus:ring-[#0b3b80]/10 transition-colors resize-none"
                         />
@@ -248,10 +308,20 @@ export default function ContactPage() {
 
                       <button
                         type="submit"
-                        className="flex items-center justify-center gap-2 w-full rounded-lg bg-[#d32537] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#b01e2e] hover:-translate-y-0.5"
+                        disabled={sending}
+                        className="flex items-center justify-center gap-2 w-full rounded-lg bg-[#d32537] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#b01e2e] hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                       >
-                        <Send className="h-4 w-4" />
-                        Send Message
+                        {sending ? (
+                          <>
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <Send className="h-4 w-4" />
+                            Send Message
+                          </>
+                        )}
                       </button>
                     </form>
                   )}
