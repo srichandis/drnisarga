@@ -66,9 +66,9 @@ export default function ContactPage() {
     {
       icon: Mail,
       label: "Email",
-      value: "contact@drnisarga.com",
+      value: "drnisarga@gmail.com",
       description: "Send us an email and we'll respond promptly",
-      href: "mailto:contact@drnisarga.com",
+      href: "mailto:drnisarga@gmail.com",
     },
     {
       icon: MapPin,
