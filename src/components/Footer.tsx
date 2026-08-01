@@ -63,7 +63,17 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}            <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-300/80">
-            <p>© {new Date().getFullYear()} Dr. Nisarga. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} Dr. Nisarga. All rights reserved. Developed by{" "}
+              <Link
+                href="https://marukatte.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-blue-200 hover:text-white underline underline-offset-2 transition-colors"
+              >
+                Marukatte
+              </Link>
+            </p>
           </div>
         </div>
       </footer>
