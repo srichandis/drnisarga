@@ -3,12 +3,21 @@
 import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Newspaper, Globe, Star, Eye, Calendar, BookOpen, Languages, FileText, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Newspaper, Globe, Star, Eye, Calendar, BookOpen, Languages, FileText, X, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AnimatedSection, ScaleIn } from "@/components/AnimatedSection";
 
-const englishMedia = [
+type MediaItem = {
+  src?: string;
+  alt: string;
+  title: string;
+  outlet: string;
+  description: string;
+  link?: string;
+};
+
+const englishMedia: MediaItem[] = [
   {
     src: "/English Media/IMG_2209.JPG",
     alt: "English news coverage - Dr. Nisarga",
@@ -105,9 +114,53 @@ const englishMedia = [
     description:
       "Dr. Nisarga recognised for outstanding contributions to cardiac surgery, particularly in robotic and minimally invasive techniques.",
   },
+  {
+    src: "/English Media/web-munsif-daily-mitral-valve.jpg",
+    alt: "Munsif Daily - robotic-assisted mitral valve replacement",
+    title: "KIMS Gachibowli Performs Robotic-Assisted Mitral Valve Replacement on 37-Year-Old Patient",
+    outlet: "Munsif Daily",
+    description:
+      "KIMS Hospital, Gachibowli, successfully performed a robotic-assisted mitral valve replacement — a rare robotic intracardiac procedure in Hyderabad — on a 37-year-old patient from Rajahmundry.",
+    link: "https://munsifdaily.com/kims-gachibowli-performs-robotic-assisted-mitral-valve/",
+  },
+  {
+    src: "/English Media/web-deccan-chronicle-mitral-valve.jpg",
+    alt: "Deccan Chronicle - robotic-assisted mitral valve replacement",
+    title: "KIMS Gachibowli Performs Robotic-Assisted Mitral Valve Replacement",
+    outlet: "Deccan Chronicle",
+    description:
+      "The complex procedure was performed on July 23 and lasted more than five hours — the patient was off ventilatory support within hours and walking the very next day.",
+    link: "https://www.deccanchronicle.com/general/kims-gachibowli-performs-robotic-assisted-mitral-valve-replacement-1975771",
+  },
+  {
+    src: "/English Media/web-etv-bharat-mitral-valve.jpg",
+    alt: "ETV Bharat - robotic heart valve replacement at KIMS Hyderabad",
+    title: "37-Year-Old Undergoes Successful Robotic Heart Valve Replacement at KIMS Hyderabad",
+    outlet: "ETV Bharat",
+    description:
+      "KIMS Hospital, Gachibowli, successfully performed a robotic-assisted, minimally invasive mitral valve replacement on a 37-year-old man from Rajahmundry.",
+    link: "https://www.etvbharat.com/en/health/37-year-old-undergoes-successful-robotic-heart-valve-replacement-at-kims-hyderabad-enn26080104661",
+  },
+  {
+    alt: "The Hindu - KIMS robotic-assisted mitral valve replacement in Hyderabad",
+    title: "KIMS doctors perform robotic-assisted mitral valve replacement on 37-year-old man in Hyderabad",
+    outlet: "The Hindu",
+    description:
+      "Hyderabad doctors successfully performed a robotic-assisted mitral valve replacement on a 37-year-old man with severe mitral stenosis caused by chronic rheumatic heart disease.",
+    link: "https://www.thehindu.com/news/cities/Hyderabad/kims-doctors-perform-robotic-assisted-mitral-valve-replacement-on-37-year-old-man-in-hyderabad/article71294624.ece",
+  },
 ];
 
-const regionalMedia = [
+const augustClippings: MediaItem[] = Array.from({ length: 20 }, (_, i) => ({
+  src: `/augustmedia/aug-${String(i + 1).padStart(2, "0")}.jpeg`,
+  alt: `Telugu media coverage of Dr. Nisarga's robotic-assisted mitral valve replacement surgery - clipping ${i + 1}`,
+  title: `Telugu Media Coverage – August 2026 (${i + 1})`,
+  outlet: "Telugu Media",
+  description:
+    "Dr. Nisarga's robotic-assisted mitral valve replacement at KIMS Gachibowli featured in Telugu news media — August 2026.",
+}));
+
+const regionalMedia: MediaItem[] = [
   {
     src: "/Regional Media/media1.JPG",
     alt: "Regional media coverage - Kannada news",
@@ -236,6 +289,24 @@ const regionalMedia = [
     description:
       "ఉచిత గుండె శస్త్రచికಿತ్సల ద్వారా సమాజ సేవలో డా. నిసర్గ అందించిన కృషికి గుర్తింపు మరియు సన్మానం.",
   },
+  {
+    src: "/Regional Media/web-etv-bharat-telugu-mitral-valve.jpg",
+    alt: "ETV Bharat Telugu - robotic-assisted mitral valve replacement at KIMS Gachibowli",
+    title: "రోబోతో గుండె మైట్రల్ వాల్వ్ మార్పిడి - గచ్చిబౌలి కిమ్స్ ఆసుపత్రిలో అరుదైన సర్జరీ",
+    outlet: "ETV Bharat (Telugu)",
+    description:
+      "కిమ్స్ హాస్పిటల్, గచ్చిబౌలి వైద్యులు రోబోటిక్ సహాయంతో మైట్రల్ వాల్వ్ మార్పిడి శస్త్రచికిత్సను విజయవంతంగా నిర్వహించారు.",
+    link: "https://www.etvbharat.com/te/state/doctors-at-kims-successfully-performed-a-robotic-assisted-mitral-valve-replacement-surgery-tgs26080104873",
+  },
+  {
+    alt: "Eenadu - robotic mitral valve replacement at KIMS",
+    title: "రోబోతో విజయవంతంగా గుండె మైట్రల్ వాల్వ్ మార్పిడి",
+    outlet: "Eenadu",
+    description:
+      "రాయదుర్గం కిమ్స్ ఆసుపత్రి వైద్యులు రోబో సహాయంతో మైట్రల్ వాల్వ్ మార్పిడి శస్త్రచికిత్సను విజయవంతంగా నిర్వహించారు.",
+    link: "https://www.eenadu.net/telugu-news/districts/hyderabad-news/529/126136568",
+  },
+  ...augustClippings,
 ];
 
 const tabs = [
@@ -246,7 +317,7 @@ const tabs = [
     description:
       "Coverage in Kannada, Telugu, and other regional language media outlets, bringing cardiac awareness and health education to local communities.",
     stats: [
-      { stat: "16+", label: "Regional Media Features", icon: Globe },
+      { stat: "37+", label: "Regional Media Features", icon: Globe },
       { stat: "3+", label: "Regional Languages", icon: Languages },
       { stat: "10+", label: "Regional Publications", icon: Newspaper },
       { stat: "4.8", label: "Media Rating", icon: Star },
@@ -259,7 +330,7 @@ const tabs = [
     description:
       "National and regional English-language news coverage featuring Dr. Nisarga's contributions to cardiac surgery and patient care.",
     stats: [
-      { stat: "14+", label: "English Media Features", icon: Newspaper },
+      { stat: "16+", label: "English Media Features", icon: Newspaper },
       { stat: "10+", label: "National Publications", icon: Globe },
       { stat: "5+", label: "Medical Journals", icon: BookOpen },
       { stat: "4.9", label: "Media Rating", icon: Star },
@@ -298,15 +369,32 @@ export default function MediaPage() {
     document.body.style.overflow = "";
   }, []);
 
+  const mediaData = activeTab === "regional" ? regionalMedia : englishMedia;
+  const currentTab = tabs.find((t) => t.id === activeTab)!;
+
   const goToPrev = useCallback(() => {
-    setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : prev));
-  }, []);
+    setLightboxIndex((prev) => {
+      if (prev === null) return prev;
+      let cursor = prev;
+      for (let i = 0; i < mediaData.length; i++) {
+        cursor = cursor === 0 ? mediaData.length - 1 : cursor - 1;
+        if (mediaData[cursor].src) return cursor;
+      }
+      return prev;
+    });
+  }, [mediaData]);
 
   const goToNext = useCallback(() => {
-    setLightboxIndex((prev) =>
-      prev !== null && prev < mediaData.length - 1 ? prev + 1 : prev
-    );
-  }, []);
+    setLightboxIndex((prev) => {
+      if (prev === null) return prev;
+      let cursor = prev;
+      for (let i = 0; i < mediaData.length; i++) {
+        cursor = cursor === mediaData.length - 1 ? 0 : cursor + 1;
+        if (mediaData[cursor].src) return cursor;
+      }
+      return prev;
+    });
+  }, [mediaData]);
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -320,8 +408,7 @@ export default function MediaPage() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [lightboxIndex, closeLightbox, goToPrev, goToNext]);
 
-  const mediaData = activeTab === "regional" ? regionalMedia : englishMedia;
-  const currentTab = tabs.find((t) => t.id === activeTab)!;
+  const lightboxItem = lightboxIndex !== null ? mediaData[lightboxIndex] : null;
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -402,51 +489,111 @@ export default function MediaPage() {
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
               {mediaData.map((item, idx) => (
                 <ScaleIn key={idx} delay={(idx % 8) * 0.04}>
-                  <div className="group bg-[#f4f8fd] rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    {/* Image */}
-                    <button
-                      onClick={() => openLightbox(idx)}
-                      className="relative w-full aspect-[4/3] overflow-hidden bg-gray-50 block focus:outline-none focus:ring-2 focus:ring-[#0b3b80]/50"
-                      aria-label={`Open ${item.title} in lightbox`}
-                    >
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        fill
-                        className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      />
-                      {/* Hover overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                        <span className="text-white text-xs font-medium bg-black/40 rounded-full px-2.5 py-1 backdrop-blur-sm flex items-center gap-1.5">
-                          <Eye className="h-3 w-3" />
-                          View Coverage
-                        </span>
-                      </div>
-                    </button>
+                  {item.src ? (
+                    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-[#f4f8fd] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                      {/* Image */}
+                      <button
+                        onClick={() => openLightbox(idx)}
+                        className="relative block w-full aspect-[4/3] overflow-hidden bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#0b3b80]/50"
+                        aria-label={`Open ${item.title} in lightbox`}
+                      >
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        />
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/40 via-transparent to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                          <span className="flex items-center gap-1.5 rounded-full bg-black/40 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
+                            <Eye className="h-3 w-3" />
+                            View Coverage
+                          </span>
+                        </div>
+                      </button>
 
-                    {/* Content */}
-                    <div className="p-4 md:p-5">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Newspaper className="h-3.5 w-3.5 text-[#0b3b80] shrink-0" />
-                        <span className="text-xs font-semibold text-[#0b3b80] uppercase tracking-wider">
-                          {item.outlet}
-                        </span>
-                      </div>
-                      <h3 className="text-sm md:text-base font-bold text-gray-800 leading-snug group-hover:text-[#0b3b80] transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-xs text-gray-500 leading-relaxed line-clamp-2">
-                        {item.description}
-                      </p>
-                      <div className="mt-3 flex items-center gap-1.5">
-                        <Calendar className="h-3 w-3 text-gray-400" />
-                        <span className="text-[10px] text-gray-400 font-medium">
-                          {activeTab === "regional" ? "Regional Media" : "Media"} Coverage
-                        </span>
+                      {/* Content */}
+                      <div className="flex flex-1 flex-col p-4 md:p-5">
+                        <div className="mb-2 flex items-center gap-2">
+                          <Newspaper className="h-3.5 w-3.5 shrink-0 text-[#0b3b80]" />
+                          <span className="text-xs font-semibold uppercase tracking-wider text-[#0b3b80]">
+                            {item.outlet}
+                          </span>
+                        </div>
+                        <h3 className="text-sm font-bold leading-snug text-gray-800 transition-colors group-hover:text-[#0b3b80] md:text-base">
+                          {item.title}
+                        </h3>
+                        <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-gray-500">
+                          {item.description}
+                        </p>
+                        <div className="mt-auto">
+                          <div className="mt-3 flex items-center justify-between gap-2 border-t border-gray-200/60 pt-3">
+                            <div className="flex items-center gap-1.5">
+                              <Calendar className="h-3 w-3 text-gray-400" />
+                              <span className="text-[10px] font-medium text-gray-400">
+                                {activeTab === "regional" ? "Regional Media" : "Media"} Coverage
+                              </span>
+                            </div>
+                            {item.link && (
+                              <a
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0b3b80] transition-colors hover:text-blue-700"
+                              >
+                                Read Article
+                                <ExternalLink className="h-3 w-3" />
+                              </a>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-[#f4f8fd] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                      {/* Branded web-coverage band */}
+                      <div className="relative flex h-28 shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br from-[#0b3b80] via-[#0f4a9e] to-[#1a5fc7]">
+                        <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-white/10 blur-xl" />
+                        <div className="absolute -bottom-10 -left-6 h-24 w-24 rounded-full bg-[#d32537]/30 blur-xl" />
+                        <div className="relative flex flex-col items-center gap-1.5">
+                          <Newspaper className="h-8 w-8 text-white/90" />
+                          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/70">
+                            Web Coverage
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex flex-1 flex-col p-4 md:p-5">
+                        <div className="mb-2 flex items-center gap-2">
+                          <Newspaper className="h-3.5 w-3.5 shrink-0 text-[#0b3b80]" />
+                          <span className="text-xs font-semibold uppercase tracking-wider text-[#0b3b80]">
+                            {item.outlet}
+                          </span>
+                        </div>
+                        <h3 className="text-sm font-bold leading-snug text-gray-800 transition-colors group-hover:text-[#0b3b80] md:text-base">
+                          {item.title}
+                        </h3>
+                        <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-gray-500">
+                          {item.description}
+                        </p>
+                        {item.link && (
+                          <div className="mt-auto pt-4">
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex w-fit items-center gap-1.5 rounded-lg bg-[#0b3b80] px-3.5 py-2 text-xs font-semibold text-white transition-all hover:bg-blue-800 hover:shadow-md"
+                            >
+                              Read Article
+                              <ExternalLink className="h-3.5 w-3.5" />
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </ScaleIn>
               ))}
             </div>
@@ -529,7 +676,7 @@ export default function MediaPage() {
               {lightboxIndex + 1} / {mediaData.length}
             </span>
             <p className="mt-2 text-xs text-white/60 max-w-xs truncate px-3">
-              {mediaData[lightboxIndex].title} — {mediaData[lightboxIndex].outlet}
+              {lightboxItem?.title} — {lightboxItem?.outlet}
             </p>
           </div>
 
@@ -562,29 +709,43 @@ export default function MediaPage() {
           )}
 
           {/* Image */}
-          <div
-            className="relative w-full h-full max-w-[90vw] max-h-[90vh]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={mediaData[lightboxIndex].src}
-              alt={mediaData[lightboxIndex].alt}
-              fill
-              priority
-              className="object-contain p-4 md:p-8"
-              sizes="90vw"
-            />
-          </div>
+          {lightboxItem?.src && (
+            <div
+              className="relative w-full h-full max-w-[90vw] max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={lightboxItem.src}
+                alt={lightboxItem.alt}
+                fill
+                priority
+                className="object-contain p-4 md:p-8"
+                sizes="90vw"
+              />
+            </div>
+          )}
 
           {/* Bottom info bar */}
           <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/60 to-transparent p-6 pt-12">
             <div className="max-w-4xl mx-auto text-center">
               <h3 className="text-white font-bold text-base md:text-lg">
-                {mediaData[lightboxIndex].title}
+                {lightboxItem?.title}
               </h3>
               <p className="text-white/70 text-sm mt-1">
-                {mediaData[lightboxIndex].outlet}
+                {lightboxItem?.outlet}
               </p>
+              {lightboxItem?.link && (
+                <a
+                  href={lightboxItem.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/25"
+                >
+                  Read Original Article
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              )}
             </div>
           </div>
         </div>
